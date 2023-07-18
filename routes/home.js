@@ -9,33 +9,18 @@ router.post('/', async (req, res) => {
     if (req.body.name && req.body.phone && req.body.formName) {
         let txt = '';
 
-        txt += `<b>Назва контакт форми: </b> <u>${req.body.formName}</u>\n`;
+        txt += `<b>Название формы: </b> <u>${req.body.formName}</u>\n`;
 
-        if (req.body.fromPage) {
-            txt+= `<b>З якої сторінки? </b> <u>${req.body.fromPage}</u>\n`
+
+        if (req.body.price) {
+            txt+= `<b>Цена услги:</b> <u>${req.body.price}</u>\n`
         }
 
-        if (req.body.vacancyName) {
-            txt+= `<b>Назва вакансії: </b> <u>${req.body.vacancyName}</u>\n`
-        }
-
-        if (req.body.productName) {
-            txt+= `<b>Назва плана:</b> <u>${req.body.productName}</u>\n`
-        }
-
-        txt += `<b>Призвище Ім’я: </b> <u>${req.body.name}</u>\n`;
-        txt += `<b>Телефон або нікнейм: </b> <u>${req.body.phone}</u>\n`;
+        txt += `<b>Фамилия Имя: </b> <u>${req.body.name}</u>\n`;
+        txt += `<b>Телефон или никнейм месенджера: </b> <u>${req.body.phone}</u>\n`;
 
         if (req.body.messenger) {
             txt+= `<b>Месенджер:</b> <u>${req.body.messenger}</u>\n`
-        }
-
-        if (req.body.purpose) {
-            txt+= `<b>Ціль навчання: </b> <u>${req.body.purpose}</u>\n`
-        }
-
-        if (req.body.experience) {
-            txt+= `<b>Чи є досвід вивченная англійскої мови?</b> <u>${req.body.experience}</u>\n`
         }
 
         if (req.body.comment) {
